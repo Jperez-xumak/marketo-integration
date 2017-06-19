@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Marketo Forms POC</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="//app-sj17.marketo.com/js/forms2/js/forms2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
+</head>
+<body>
+   
+    <nav class="Navigation">
+        <h2 class="Navigation-title">Navigation Bar</h2>
+        <img class="Navigation-hamburger" src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" alt="Humburger Icon" width="40"></nav>
+    </nav>
+
+    <div class="Sticky" :class="{'Sticky--isActive': active}">
+        <header class="Sticky-header">
+            <p class="Sticky-title">{{ title }}</p>
+            <button class="Sticky-button" @click="active = !active">+</button>
+        </header>
+        <p class="Sticky-description">
+            {{ description }}
+        </p>
+        <div class="StickyEmbed">
+            <!-- embedded code here -->
+             <form id="mktoForm_1143"></form>
+            
+        </div>
+        <footer class="Sticky-footer">
+            <a class="Sticky-link" v-bind:href="linkUrl">{{ linkText }}</a>
+            <address class="Sticky-number">{{ phone }}</address>
+            <p class="Sticky-text">Phone support is available: 8am - 6pm, M - F</p>
+        </footer>
+    </div>
+
+    <div class="Container">
+        <div class="row">
+            <div class="small-12 columns">
+                
+                <div class="Header">
+                    <h1>This is the Header of the page</h1>
+                    <p>This is a short description that goes on the header.  It could have several lines of height so we must place a limit so the authors don't get too excited writing stuff</p>
+                    <a class="Cta Cta--red" href="#">Learn more</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns">
+                
+                <div class="Content">
+                    <h2>This is dummy content</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore quasi sequi voluptas dolor expedita debitis, illo veritatis temporibus molestiae commodi modi eos eum inventore sit voluptatum voluptatibus qui distinctio repellendus.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore quasi sequi voluptas dolor expedita debitis, illo veritatis temporibus molestiae commodi modi eos eum inventore sit voluptatum voluptatibus qui distinctio repellendus.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns">
+                
+                <div class="Content">
+                    <h2>This is dummy more content</h2>
+                    <img src="http://placehold.it/800x600" alt="Placeholder image">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore quasi sequi voluptas dolor expedita debitis, illo veritatis temporibus molestiae commodi modi eos eum inventore sit voluptatum voluptatibus qui distinctio repellendus.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore quasi sequi voluptas dolor expedita debitis, illo veritatis temporibus molestiae commodi modi eos eum inventore sit voluptatum voluptatibus qui distinctio repellendus.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '.Sticky',
+            data: {
+                title: 'Request a demonstration',
+                description: 'Description of the process of requesting a demonstration.',
+                linkText: 'Get in touch with XumaK',
+                linkUrl: '#',
+                phone: '1-800-xxx-xxxx',
+                active: false
+            },
+            methods: {
+                displayForm: function() {
+                    this.active = !this.active;
+                }
+            }
+        });
+    </script>
+
+    <script>MktoForms2.loadForm("//app-sj17.marketo.com", "190-MUJ-358", 1143);</script>
+</body>
+</html>
