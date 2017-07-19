@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/marketo_shame.css">
-      <script src="//app-sj17.marketo.com/js/forms2/js/forms2.min.js"></script>
+    <script src="//app-sj17.marketo.com/js/forms2/js/forms2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -32,8 +32,11 @@
         </p>
         <div class="Sticky-embed">
             <!-- embedded code here -->
-            <form id="mktoForm_1143"></form>
-            <iframe class="Sticky-iframe" id="myIframe"></iframe>
+            <div class="Sticky-marketoForm">
+              <form class="Form Form--contact" id="mktoForm_1002"></form>
+              <iframe class="Sticky-iframe" id="myIframe"></iframe>
+            </div>
+            
         </div>
         <footer class="Sticky-footer">
             <a class="Sticky-link" href="#">Get in touch with XumaK</a>
@@ -95,24 +98,6 @@
     </div>
 
     <script>
-        /*
-        new Vue({
-            el: '.Sticky',
-            data: {
-                title: 'Request a demonstration',
-                description: 'Description of the process of requesting a demonstration.',
-                linkText: 'Get in touch with XumaK',
-                linkUrl: '#',
-                phone: '1-800-xxx-xxxx',
-                active: false
-            },
-            methods: {
-                displayForm: function() {
-                    this.active = !this.active;
-                }
-            }
-        });
-    */
         (function () {
 
             var btn = document.querySelector('.Sticky-button');
@@ -128,7 +113,7 @@
     </script>
 
     <script>
-        MktoForms2.loadForm("http://app-sj17.marketo.com/", "190-MUJ-358", 1143, function (form) {
+        MktoForms2.loadForm("//app-sj17.marketo.com", "190-MUJ-358", 1002, function (form) {
             // Add an onSuccess handler
             form.onSuccess(function (values, followUpUrl) {
                 // Get the form's jQuery element and hide it
@@ -137,7 +122,6 @@
                 var iframe = document.getElementById('myIframe');
                 iframe.src = followUpUrl;
                 iframe.style.display = "block";
-
                 // Return false to prevent the submission handler from taking the lead to the follow up url
                 return false;
             });
@@ -176,6 +160,9 @@
             }
 
         })();
+        
+        $("#Country").chosen({no_results_text: "Oops, nothing found!"}); 
+        
     </script>
 </body>
 
