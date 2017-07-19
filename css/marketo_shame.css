@@ -50,6 +50,7 @@
 }
 
 .mktoButton {
+    color: white !important;
     padding: 15px 20px !important;
     font-weight: bold !important;
     font-size: 16px !important;
@@ -105,11 +106,7 @@
 }
   
 .mktoButtonRow {
-    display: inline-block;
-    position: relative;
-    width: 100%;
-    margin-left: 50px !important;
-    margin-top: 30px !important;
+  margin-left: 220px !important;
 }
 
 .mktoForm input[type=text], .mktoForm input[type=url], .mktoForm input[type=email], .mktoForm input[type=tel], .mktoForm input[type=number], .mktoForm input[type=date], .mktoForm select.mktoField, .mktoForm textarea.mktoField {
