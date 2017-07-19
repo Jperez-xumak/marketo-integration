@@ -9,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/marketo_shame.css">
-    <script src="//app-sj17.marketo.com/js/forms2/js/forms2.min.js"></script>
+      <script src="//app-sj17.marketo.com/js/forms2/js/forms2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -128,7 +128,7 @@
     </script>
 
     <script>
-        MktoForms2.loadForm("//app-sj17.marketo.com", "190-MUJ-358", 1143, function (form) {
+        MktoForms2.loadForm("http://app-sj17.marketo.com/", "190-MUJ-358", 1143, function (form) {
             // Add an onSuccess handler
             form.onSuccess(function (values, followUpUrl) {
                 // Get the form's jQuery element and hide it
